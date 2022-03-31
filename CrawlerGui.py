@@ -1,6 +1,3 @@
-from calendar import calendar
-from cgitb import text
-from random import randrange
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
@@ -15,7 +12,12 @@ class App(QMainWindow):
         self.height = 500
         self.setWindowTitle(self.title)
         self.setFixedSize(self.width ,self.height)
-        self.move(0, 0)
+
+        # Move window to center of the screen
+        qtRectangle = self.frameGeometry()
+        centerPoint = QDesktopWidget().availableGeometry().center()
+        qtRectangle.moveCenter(centerPoint)
+        self.move(qtRectangle.topLeft())
         
         self.table_widget = MainTable(self)
         self.setCentralWidget(self.table_widget)
