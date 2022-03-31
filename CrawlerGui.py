@@ -58,8 +58,8 @@ class MainTable(QWidget):
       self.twitter_input_form_layout.addWidget(self.get_info_button)
 
       self.twitter_datetime_picker_layout.addWidget(self.datepicker_start_label, 0, 0, Qt.AlignmentFlag.AlignCenter)
-      self.twitter_datetime_picker_layout.addWidget(self.datepicker_end_label, 0, 1, Qt.AlignmentFlag.AlignCenter)
       self.twitter_datetime_picker_layout.addWidget(self.datepicker_start, 1, 0, Qt.AlignmentFlag.AlignCenter)
+      self.twitter_datetime_picker_layout.addWidget(self.datepicker_end_label, 0, 1, Qt.AlignmentFlag.AlignCenter)
       self.twitter_datetime_picker_layout.addWidget(self.datepicker_end, 1, 1, Qt.AlignmentFlag.AlignCenter)
 
       self.twitter_tab.layout.addLayout(self.twitter_input_form_layout, 0, 0, Qt.AlignmentFlag.AlignTop)
