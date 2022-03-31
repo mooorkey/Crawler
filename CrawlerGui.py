@@ -48,14 +48,17 @@ class MainTable(QWidget):
       self.twitter_input_box = InputForm(parent=self.twitter_tab)
       self.twitter_table = QTableWidget(parent=self.twitter_tab)
 
+      # Date picker
       self.datepicker_start_label = QLabel("Start date")
-      self.datepicker_start = QDateEdit(calendarPopup=True)
+      self.datepicker_start = QDateEdit()
+      self.datepicker_start.setCalendarPopup(True)
       self.datepicker_start.setDateTime(QDateTime.currentDateTime())
       self.datepicker_end_label = QLabel("End date")
-      self.datepicker_end = QDateEdit(calendarPopup=True)
-      self.datepicker_end.setDateTime(QDateTime.currentDateTime().addDays(1))
-      
+      self.datepicker_end = QDateEdit()
+      self.datepicker_end.setCalendarPopup(True)
+      self.datepicker_end.setDateTime(QDateTime.currentDateTime().addDays(1))    
 
+      # Add sub layout to main layout
       self.twitter_input_form_layout.addWidget(self.twitter_input_box)
       self.twitter_input_form_layout.addWidget(self.get_info_button)
 
@@ -98,7 +101,6 @@ class InputForm(QWidget):
 
        self.layout.addRow("HashTag", self.textfield)
        self.setLayout(self.layout)
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
