@@ -42,17 +42,17 @@ class MainTable(QWidget):
       self.twitter_tab.layout = QGridLayout(self)
       self.twitter_input_form_layout = QHBoxLayout()
       self.twitter_datetime_picker_layout = QGridLayout()
-
       self.get_info_button = QPushButton(parent=self.twitter_tab,text="Get Info.")
       self.twitter_input_box = InputForm(parent=self.twitter_tab)
       self.twitter_table = QTableWidget(parent=self.twitter_tab)
 
       self.datepicker_start_label = QLabel("Start date")
-      self.datepicker_end_label = QLabel("End date")
       self.datepicker_start = QDateEdit(calendarPopup=True)
-      self.datepicker_end = QDateEdit(calendarPopup=True)
       self.datepicker_start.setDateTime(QDateTime.currentDateTime())
+      self.datepicker_end_label = QLabel("End date")
+      self.datepicker_end = QDateEdit(calendarPopup=True)
       self.datepicker_end.setDateTime(QDateTime.currentDateTime().addDays(1))
+      
 
       self.twitter_input_form_layout.addWidget(self.twitter_input_box)
       self.twitter_input_form_layout.addWidget(self.get_info_button)
