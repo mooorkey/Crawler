@@ -1,0 +1,2 @@
+
+      dialog.setWindowTitle('Add URL')
